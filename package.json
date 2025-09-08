@@ -6,11 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@emotion/native": "^11.11.0",
     "@emotion/react": "^11.14.0",
+    "@expo/metro-runtime": "~5.0.4",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.4.2",
     "@react-navigation/native": "^7.1.14",
@@ -19,15 +21,19 @@
     "axios": "^1.10.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
-    "expo": "^53.0.20",
+    "expo": "53.0.22",
     "expo-auth-session": "~6.2.1",
     "expo-local-authentication": "~16.0.5",
-    "expo-secure-store": "~14.2.3",
+    "expo-secure-store": "~14.2.4",
     "expo-status-bar": "~2.2.3",
     "immer": "^10.1.1",
     "lodash": "^4.17.21",
+    "metro": "^0.82.0",
+    "metro-cache": "^0.83.1",
+    "metro-config": "^0.83.1",
     "moti": "^0.30.0",
     "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-native": "0.79.5",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
@@ -35,6 +41,7 @@
     "react-native-screens": "~4.11.1",
     "react-native-svg": "15.11.2",
     "react-native-toast-message": "^2.3.3",
+    "react-native-web": "^0.20.0",
     "uuid": "^11.1.0",
     "zustand": "^5.0.6"
   },
@@ -42,8 +49,22 @@
     "@babel/core": "^7.25.2",
     "@types/lodash": "^4",
     "@types/react": "~19.0.10",
+    "@types/react-dom": "^19",
+    "@types/react-native-web": "^0",
+    "patch-package": "^8.0.0",
     "typescript": "~5.8.3"
   },
   "private": true,
-  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
+  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c",
+  "resolutions": {
+    "metro": "0.82.5",
+    "metro-cache": "0.82.5",
+    "metro-config": "0.82.5",
+    "metro-core": "0.82.5",
+    "metro-file-map": "0.82.5",
+    "metro-resolver": "0.82.5",
+    "metro-runtime": "0.82.5",
+    "metro-source-map": "0.82.5",
+    "metro-transform-worker": "0.82.5"
+  }
 }

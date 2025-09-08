@@ -1,0 +1,13 @@
+diff --git a/node_modules/@expo/metro-config/build/file-store.js b/node_modules/@expo/metro-config/build/file-store.js
+index 6beb698..fbb50f3 100644
+--- a/node_modules/@expo/metro-config/build/file-store.js
++++ b/node_modules/@expo/metro-config/build/file-store.js
+@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.FileStore = void 0;
+-const FileStore_1 = __importDefault(require("metro-cache/src/stores/FileStore"));
++const FileStore_1 = { default: require("metro-cache").FileStore };
+ const debug = require('debug')('expo:metro:cache');
+ class FileStore extends FileStore_1.default {
+     async set(key, value) {
