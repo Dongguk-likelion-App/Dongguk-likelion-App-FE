@@ -76,6 +76,7 @@ const theme = {
   },
 
   grid: {
+    margin8: 8,
     margin16: 16,
     margin24: 24,
   },
