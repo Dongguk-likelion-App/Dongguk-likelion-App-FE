@@ -58,6 +58,8 @@
     "@types/react": "~19.0.10",
     "@types/react-dom": "^19",
     "@types/react-native-web": "^0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "chromatic": "^13.1.4",
     "patch-package": "^8.0.0",
     "typescript": "~5.8.3"
   },
