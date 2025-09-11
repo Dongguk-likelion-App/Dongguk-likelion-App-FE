@@ -55,7 +55,7 @@ __metadata:
     react-native-reanimated: "npm:~3.17.4"
     react-native-safe-area-context: "npm:5.4.0"
     react-native-screens: "npm:~4.11.1"
-    react-native-svg: "npm:15.11.2"
+    react-native-svg: "npm:^15.13.0"
     react-native-toast-message: "npm:^2.3.3"
     react-native-web: "npm:^0.20.0"
     typescript: "npm:~5.8.3"
@@ -9025,9 +9025,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:15.11.2":
-  version: 15.11.2
-  resolution: "react-native-svg@npm:15.11.2"
+"react-native-svg@npm:^15.13.0":
+  version: 15.13.0
+  resolution: "react-native-svg@npm:15.13.0"
   dependencies:
     css-select: "npm:^5.1.0"
     css-tree: "npm:^1.1.3"
@@ -9035,7 +9035,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10c0/040f3a298db80f4a282f9616c9550d7978beebc518de523eb417106afd7f5cb1d021424ea287cedba705f0c48aa15631056c42a79c4b46edcafa34cba71aed63
+  checksum: 10c0/89ba2ed640f78e69d44980473530fdb83e24336a1a43936e19f532e772c41e8532ee1d4f3ae003339e817a3e3b055aa2a8ee3c0da31754cd2c83fa1a81130d6a
   languageName: node
   linkType: hard
 
