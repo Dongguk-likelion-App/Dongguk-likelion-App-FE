@@ -124,8 +124,9 @@ Closes #이슈번호
 | 이름                                 | 역할                             |
 | ------------------------------------ | -------------------------------- |
 | [오태준](https://github.com/taejun0) | Team Leader / Frontend Developer |
-| 박성재                               | Frontend Developer               |
 | 강근우                               | Frontend Developer               |
+| 곽도윤                               | Frontend Developer               |
+| 이보연                               | Frontend Developer               |
 
 ---
 
