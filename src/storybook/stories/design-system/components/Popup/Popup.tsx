@@ -1,4 +1,5 @@
 import React from "react";
+import Feather from "@expo/vector-icons/Feather";
 import {
   Overlay,
   Container,
@@ -12,7 +13,6 @@ import {
   CancelText,
 } from "./Popup.styles";
 import type { PopupProps } from "./Popup.types";
-const warningIcon = require("../../../../../../assets/images/default.svg");
 
 export default function Popup({
   visible,
@@ -28,7 +28,9 @@ export default function Popup({
   return (
     <Overlay>
       <Container>
-        <Icon source={warningIcon} resizeMode="contain" />
+        <Icon>
+          <Feather name="alert-circle" size={60} color="#F48335" />
+        </Icon>
         <MainText>{mainText}</MainText>
         {subText && <SubText>{subText}</SubText>}
 

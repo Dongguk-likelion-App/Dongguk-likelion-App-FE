@@ -27,10 +27,12 @@ export const Container = styled.View(({ theme }) => ({
   elevation: 8,
 }));
 
-export const Icon = styled.Image({
+export const Icon = styled.View({
   width: 60,
   height: 60,
   marginBottom: 10,
+  alignItems: 'center',
+  justifyContent: 'center',
 });
 
 export const MainText = styled.Text(({ theme }) => ({
