@@ -35,7 +35,7 @@ export const Icon = styled.Image({
 
 export const MainText = styled.Text(({ theme }) => ({
   ...theme.typography.Head3_2,
-  color: theme.colors.Neutral.N80,
+  color: theme.colors.Neutral.N70,
   fontWeight: "600",
   marginBottom: 4,
 }));

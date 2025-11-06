@@ -8,3 +8,5 @@ export { default as Dropdown } from './Dropdown/Dropdown';
 export { default as Popup } from './Popup/Popup';
 export { default as Navigation } from './navigation/Navigation';
 export { default as Title } from './title/Title';
+export { default as Tag } from './tag/Tag';
+export { default as Checkbox } from './checkbox/Checkbox';
