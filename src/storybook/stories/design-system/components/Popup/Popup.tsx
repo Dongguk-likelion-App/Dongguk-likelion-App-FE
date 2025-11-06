@@ -12,7 +12,7 @@ import {
   CancelText,
 } from "./Popup.styles";
 import type { PopupProps } from "./Popup.types";
-import warningIcon from "../../../../../../assets/warning-icon.png";
+const warningIcon = require("../../../../../../assets/images/default.svg");
 
 export default function Popup({
   visible,
