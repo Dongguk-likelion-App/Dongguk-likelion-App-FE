@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  FlatList,
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 type DropdownProps = {
@@ -34,7 +40,11 @@ export const Dropdown = ({
         <Text style={[styles.selectedText, !value && styles.placeholder]}>
           {value || placeholder}
         </Text>
-        <Ionicons name={open ? 'chevron-up' : 'chevron-down'} size={20} color="#555" />
+        <Ionicons
+          name={open ? 'chevron-up' : 'chevron-down'}
+          size={20}
+          color="#555"
+        />
       </TouchableOpacity>
 
       {open && (
@@ -46,9 +56,10 @@ export const Dropdown = ({
               <TouchableOpacity
                 style={[
                   styles.optionItem,
-                  index === options.length - 1 && styles.lastOptionItem, 
+                  index === options.length - 1 && styles.lastOptionItem,
                 ]}
-                onPress={() => handleSelect(item)}>
+                onPress={() => handleSelect(item)}
+              >
                 <Text style={styles.optionText}>{item}</Text>
               </TouchableOpacity>
             )}
@@ -58,7 +69,6 @@ export const Dropdown = ({
     </View>
   );
 };
-
 
 /*----------------------- Styles ------------------------*/
 
@@ -74,8 +84,8 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
   },
-  selectedText: { fontSize: 15, color: '#111', fontWeight:500 },
-  placeholder: { color: '#0d0c0c', fontWeight:500 },
+  selectedText: { fontSize: 15, color: '#111', fontWeight: 500 },
+  placeholder: { color: '#0d0c0c', fontWeight: 500 },
   optionList: {
     borderWidth: 1,
     borderColor: '#A1A1AA',
@@ -94,3 +104,5 @@ const styles = StyleSheet.create({
   },
   optionText: { fontSize: 15, color: '#2A2A2E' },
 });
+
+export default Dropdown;
