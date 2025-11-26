@@ -2,7 +2,7 @@ import styled from '@emotion/native';
 import { Feather } from '@expo/vector-icons';
 
 export const Wrapper = styled.View(({ theme }) => ({
-  flex: 1,
+  width: '100%',
   flexDirection: 'column',
   gap: theme.space.XS,
 }));
@@ -51,7 +51,10 @@ export const EyeIcon = styled(Feather)(({ theme }) => ({
   fontSize: 19.5,
 }));
 
-export const HelperText = styled.Text(({ theme }) => ({
-  ...theme.typography.Body2_2,
-  color: theme.colors.Warning.R30,
-}));
+export const HelperText = styled.Text<{ color?: 'error' | 'success' }>(
+  ({ theme, color = 'error' }) => ({
+    ...theme.typography.Body2_2,
+    color:
+      color === 'success' ? theme.colors.Warning.G30 : theme.colors.Warning.R30,
+  })
+);
