@@ -12,3 +12,4 @@ import './design-system/components/navigation/Navigation.stories';
 import './design-system/components/title/Title.stories';
 import './design-system/components/tag/Tag.stories';
 import './design-system/components/checkbox/Checkbox.stories';
+import './design-system/components/SearchBar/SearchBar.stories';

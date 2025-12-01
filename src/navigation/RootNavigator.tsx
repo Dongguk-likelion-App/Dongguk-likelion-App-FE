@@ -14,6 +14,7 @@ import {
   SplashScreen,
   LoginScreen,
   SignupScreen,
+  AccountManagementScreen,
 } from '@screens/index';
 import {
   RootStackParamList,
@@ -36,6 +37,7 @@ export default function RootNavigator() {
       >
         <RootStack.Screen name="Splash" component={SplashScreen} />
         <RootStack.Screen name="Auth" component={AuthNavigator} />
+        <RootStack.Screen name="AccountManagement" component={AccountManagementScreen} />
         {/* <RootStack.Screen name="Tabs" component={TabNavigator} /> */}
       </RootStack.Navigator>
     </NavigationContainer>

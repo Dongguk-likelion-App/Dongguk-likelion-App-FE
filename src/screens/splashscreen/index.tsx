@@ -25,9 +25,9 @@ export default function SplashScreen() {
     ]).start();
 
     const timer = setTimeout(() => {
-      // 스플래시로 되돌아올 수 없게 초기화
-      navigation.reset({ index: 0, routes: [{ name: 'Auth' }] });
-    }, 3000);
+      // 테스트: AccountManagement 화면으로 이동
+      navigation.reset({ index: 0, routes: [{ name: 'AccountManagement' }] });
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [fadeAnim, scaleAnim, navigation]);

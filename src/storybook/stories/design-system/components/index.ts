@@ -10,3 +10,5 @@ export { default as Navigation } from './navigation/Navigation';
 export { default as Title } from './title/Title';
 export { default as Tag } from './tag/Tag';
 export { default as Checkbox } from './checkbox/Checkbox';
+export { default as SearchBar } from './SearchBar/SearchBar';
+export { default as SignupApprovalCard } from './SignupApprovalCard/SignupApprovalCard';
