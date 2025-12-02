@@ -12,7 +12,7 @@ export const SearchBarWrapper = styled.View<SearchBarWrapperProps>(({ theme, foc
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
-  width: 320,
+  width: '100%',
   paddingVertical: 8,
   paddingHorizontal: 16,
   borderRadius: 12,
@@ -29,6 +29,7 @@ export const SearchInput = styled.TextInput<SearchInputProps>(({ isEmpty }) => (
   color: isEmpty ? '#A3A3A3' : '#4B5563',
   textAlign: 'left',
   backgroundColor: 'transparent',
+  padding: 0,
 }));
 
 export const IconContainer = styled.View({

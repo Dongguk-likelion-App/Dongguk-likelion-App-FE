@@ -55,14 +55,14 @@ export default function Button({
     }
   > = {
     small: {
-      paddingV: theme.grid.margin16,
-      paddingH: theme.grid.margin8,
+      paddingV: theme.grid.margin8,
+      paddingH: theme.grid.margin16,
       font: theme.typography.Body2_1,
       icon: 16,
     },
     big: {
-      paddingV: theme.grid.margin24,
-      paddingH: theme.grid.margin16,
+      paddingV: theme.grid.margin16,
+      paddingH: theme.grid.margin24,
       font: theme.typography.Body1_1,
       icon: 20,
     },

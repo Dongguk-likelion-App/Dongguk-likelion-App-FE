@@ -19,7 +19,7 @@ export default function SearchBar({ placeholder = 'search value', value = '', on
     <SearchBarWrapper focused={isFocused}>
       <SearchInput
         placeholder={placeholder}
-        placeholderTextColor="#A3A3A3"
+        placeholderTextColor="#A1A1AA"
         value={text}
         onChangeText={handleChange}
         onFocus={() => setIsFocused(true)}
@@ -27,7 +27,7 @@ export default function SearchBar({ placeholder = 'search value', value = '', on
         isEmpty={isEmpty}
       />
       <IconContainer>
-        <SearchIcon width={16} height={16} color="#9CA3AF" />
+        <SearchIcon width={16} height={16} color="#2A2A2E" />
       </IconContainer>
     </SearchBarWrapper>
   );

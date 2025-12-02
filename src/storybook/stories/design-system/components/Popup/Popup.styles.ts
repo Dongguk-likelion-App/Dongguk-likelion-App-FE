@@ -1,14 +1,14 @@
-import styled from "@emotion/native";
+import styled from '@emotion/native';
 
 export const Overlay = styled.View({
-  position: "absolute",
+  position: 'absolute',
   top: 0,
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: "rgba(255, 255, 255, 0.3)",
-  justifyContent: "center",
-  alignItems: "center",
+  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const Container = styled.View(({ theme }) => ({
@@ -17,9 +17,9 @@ export const Container = styled.View(({ theme }) => ({
   borderRadius: 28,
   paddingVertical: theme.space.M,
   paddingHorizontal: theme.space.XL,
-  alignItems: "center",
+  alignItems: 'center',
   // iOS Shadow
-  shadowColor: "#000000",
+  shadowColor: '#000000',
   shadowOffset: { width: 0, height: 0 },
   shadowOpacity: 0.15,
   shadowRadius: 24,
@@ -38,7 +38,7 @@ export const Icon = styled.View({
 export const MainText = styled.Text(({ theme }) => ({
   ...theme.typography.Head3_2,
   color: theme.colors.Neutral.N70,
-  fontWeight: "600",
+  fontWeight: '600',
   marginBottom: 4,
 }));
 
@@ -46,13 +46,15 @@ export const SubText = styled.Text(({ theme }) => ({
   ...theme.typography.Body2_1,
   color: theme.colors.Neutral.N40,
   marginBottom: theme.space.L,
+  textAlign: 'center',
+  width: '100%',
 }));
 
 export const ButtonRow = styled.View({
-  flexDirection: "row",
-  justifyContent: "center",
+  flexDirection: 'row',
+  justifyContent: 'center',
   gap: 15,
-  width: "100%",
+  width: '100%',
 });
 
 export const ConfirmButton = styled.TouchableOpacity(({ theme }) => ({
@@ -60,7 +62,7 @@ export const ConfirmButton = styled.TouchableOpacity(({ theme }) => ({
   backgroundColor: theme.colors.Neutral.N50,
   borderRadius: theme.radius.L,
   paddingVertical: 10,
-  alignItems: "center",
+  alignItems: 'center',
 }));
 
 export const CancelButton = styled.TouchableOpacity(({ theme }) => ({
@@ -68,12 +70,12 @@ export const CancelButton = styled.TouchableOpacity(({ theme }) => ({
   backgroundColor: theme.colors.Neutral.N10,
   borderRadius: theme.radius.L,
   paddingVertical: 10,
-  alignItems: "center",
+  alignItems: 'center',
 }));
 
 export const ButtonText = styled.Text(({ theme }) => ({
   ...theme.typography.Small1_1,
-  fontWeight: "600",
+  fontWeight: '600',
   color: theme.colors.Neutral.WHITE,
 }));
 

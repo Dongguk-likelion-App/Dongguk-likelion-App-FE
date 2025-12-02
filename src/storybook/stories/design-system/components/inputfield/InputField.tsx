@@ -14,6 +14,7 @@ type InputFieldProps = {
     'secureTextEntry' | 'value' | 'onChangeText'
   >;
   helperText?: string;
+  helperTextColor?: 'error' | 'success';
   disabled?: boolean;
 };
 
@@ -24,6 +25,7 @@ export default function InputField({
   variant = 'default',
   inputProps,
   helperText,
+  helperTextColor = 'error',
   disabled,
 }: InputFieldProps) {
   const theme = useTheme();
@@ -57,7 +59,9 @@ export default function InputField({
         </S.InputContainer>
 
         {/* 헬퍼 텍스트 */}
-        {helperText && <S.HelperText>{helperText}</S.HelperText>}
+        {helperText && (
+          <S.HelperText color={helperTextColor}>{helperText}</S.HelperText>
+        )}
       </S.InputWrapper>
     </S.Wrapper>
   );

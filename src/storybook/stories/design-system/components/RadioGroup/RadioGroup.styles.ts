@@ -1,11 +1,13 @@
 import styled from '@emotion/native';
 import { TouchableOpacity } from 'react-native';
 
-export const Wrapper = styled.View(({ theme }) => ({
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: theme.space.L,
-}));
+export const Wrapper = styled.View<{ column?: boolean }>(
+  ({ theme, column }) => ({
+    flexDirection: column ? 'column' : 'row',
+    alignItems: column ? 'flex-start' : 'center',
+    gap: column ? theme.space.M : theme.space.L,
+  })
+);
 
 export const Option = styled(TouchableOpacity)(({ theme }) => ({
   flexDirection: 'row',
