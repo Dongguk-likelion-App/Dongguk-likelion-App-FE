@@ -6,7 +6,7 @@ export const Overlay = styled.View({
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+  backgroundColor: 'rgba(92,92,92, 0.4)',
   justifyContent: 'center',
   alignItems: 'center',
 });
@@ -82,3 +82,27 @@ export const ButtonText = styled.Text(({ theme }) => ({
 export const CancelText = styled(ButtonText)(({ theme }) => ({
   color: theme.colors.Neutral.N70,
 }));
+
+export const InputWrapper = styled.View(({ theme, isValid }: any) => ({
+  width: '100%',
+  borderWidth: 1,
+  borderRadius: 12,
+  borderColor: isValid ? theme.colors.Success.G30 : theme.colors.Neutral.N20,
+  backgroundColor: theme.colors.Neutral.WHITE,
+  paddingVertical: 10,
+  paddingHorizontal: 12,
+  marginBottom: theme.space.M,
+  flexDirection: 'row',
+  alignItems: 'center',
+}));
+
+export const InputField = styled.TextInput(({ theme }) => ({
+  flex: 1,
+  fontSize: 14,
+  color: theme.colors.Neutral.N70,
+  fontFamily: theme.fontFamily.regular,
+}));
+
+export const CheckIconWrapper = styled.View({
+  marginLeft: 8,
+});

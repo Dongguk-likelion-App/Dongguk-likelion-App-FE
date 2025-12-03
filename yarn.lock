@@ -28,6 +28,7 @@ __metadata:
     "@types/lodash": "npm:^4"
     "@types/react": "npm:~19.0.10"
     "@types/react-dom": "npm:^19"
+    "@types/react-native": "npm:^0.73.0"
     "@types/react-native-web": "npm:^0"
     axios: "npm:^1.10.0"
     babel-plugin-module-resolver: "npm:^5.0.2"
@@ -3349,6 +3350,15 @@ __metadata:
     "@types/react": "npm:*"
     react-native: "npm:*"
   checksum: 10c0/df5a0cc071251a9626fef9aeb3e9e1e2e44a4465138cbdea01e80a7315a4a48c9da89e0d25672fda7a1c44decea9c9928f237d5367e33e7fb057f5c6402ca71d
+  languageName: node
+  linkType: hard
+
+"@types/react-native@npm:^0.73.0":
+  version: 0.73.0
+  resolution: "@types/react-native@npm:0.73.0"
+  dependencies:
+    react-native: "npm:*"
+  checksum: 10c0/81b8824f3bea30f18f92bb1e7c69777801b6b91a603c712173179b10e8fd6754f3594841dc452d0fc4a4cdc597e366fdf7839d27e0c5c5957f7dadde65882212
   languageName: node
   linkType: hard
 
