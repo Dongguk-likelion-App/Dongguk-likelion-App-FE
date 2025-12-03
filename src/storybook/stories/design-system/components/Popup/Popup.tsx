@@ -1,6 +1,6 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import Feather from '@expo/vector-icons/Feather';
+import React, {useState} from 'react';
+import { TouchableOpacity, TextInput, Image, View } from 'react-native';
+import warningIcon from '../../../../../../assets/warning-icon.png';
 import {
   Overlay,
   Container,
@@ -34,9 +34,12 @@ export default function Popup({
         style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
       />
       <Container onStartShouldSetResponder={() => true}>
-        <Icon>
-          <Feather name="alert-circle" size={60} color="#F48335" />
-        </Icon>
+      <Icon>
+        <Image
+          source={warningIcon}
+          style={{ width: 60, height: 60, resizeMode: 'contain' }}
+        />
+      </Icon>
         <MainText>{mainText}</MainText>
         {subText && (
           <>

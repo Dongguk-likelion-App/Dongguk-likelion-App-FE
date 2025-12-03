@@ -10,8 +10,11 @@ import {
   RejectModal,
   Navigation,
 } from '../../storybook/stories/design-system/components';
+import AccountCard from './AccountCard/AccountCard'; 
+import ActionButton from '@components/ActionButton/ActionButton';
+import {Popup} from '../../storybook/stories/design-system/components';
 
-// 목 데이터
+// 목 데이터 (회원가입 신청용)
 const mockApplications = [
   {
     id: '1',
@@ -35,17 +38,57 @@ const mockApplications = [
   },
 ];
 
+// 목 데이터 (전체 계정 목록용)
+const mockAccounts = [
+  {
+    id: 'user1',
+    name: '박세라',
+    email: 'sarah20709@naver.com',
+    tags: [
+      { label: '12기', type: 'generation' as const },
+      { label: '운영진', type: 'role' as const },
+      { label: '기획디자인', type: 'part' as const },
+      { label: '관리자', type: 'permission' as const },
+    ],
+  },
+  {
+    id: 'user2',
+    name: '오태준',
+    email: 'ohtejun@naver.com',
+    tags: [
+      { label: '12기', type: 'generation' as const },
+      { label: '운영진', type: 'role' as const },
+      { label: '프론트엔드', type: 'part' as const },
+    ],
+  },
+  {
+    id: 'user3',
+    name: '윤혜정',
+    email: 'yoon@naver.com',
+    tags: [
+      { label: '11기', type: 'generation' as const },
+      { label: '운영진 수료자', type: 'role' as const },
+      { label: '기획디자인', type: 'part' as const },
+    ],
+  },
+];
+
 const TABS = ['전체 계정', '회원가입 신청', '정지된 계정'];
 const FILTERS = ['전체', '아기사자', '운영진', '수료자', '프론트', '백엔드', '기획/디자인'];
 
 export default function AccountManagementScreen() {
-  const [selectedTab, setSelectedTab] = useState(1); // 회원가입 신청 탭 선택
+  const [selectedTab, setSelectedTab] = useState(0); // 전체 계정 탭 선택으로 변경
   const [selectedFilter, setSelectedFilter] = useState(0); // 전체 필터 선택
   const [searchQuery, setSearchQuery] = useState('');
   const [showApproveModal, setShowApproveModal] = useState(false);
   const [showRejectModal, setShowRejectModal] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [rejectReason, setRejectReason] = useState('');
+
+  const [selectedAccounts, setSelectedAccounts] = useState<string[]>([]); 
+  const [showSuspendPopup, setShowSuspendPopup] = useState(false);
+  const [showAuthorityPopup, setShowAuthorityPopup] = useState(false);
+
 
   const handleApproveClick = (id: string) => {
     setSelectedId(id);
@@ -80,6 +123,17 @@ export default function AccountManagementScreen() {
     setRejectReason('');
   };
 
+  const handleAccountSelect = (id: string, isSelected: boolean) => {
+   
+    setSelectedAccounts(prev => {
+      if (isSelected) {
+        return [...prev, id];
+      } else {
+        return prev.filter(accountId => accountId !== id);
+      }
+    });
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
       {/* 헤더 */}
@@ -109,26 +163,71 @@ export default function AccountManagementScreen() {
         />
 
         {/* 검색바 */}
-        <View style={{ 
-          width: '100%',
-          paddingHorizontal: 16, 
-          paddingVertical: 8 
-        }}>
-          <SearchBar
-            placeholder="이름 검색"
-            value={searchQuery}
-            onChange={setSearchQuery}
-          />
-        </View>
+      <View style={{ 
+        width: '100%',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+      }}>
+        <SearchBar
+          placeholder="이름 검색"
+          value={searchQuery}
+          onChange={setSearchQuery}
+        />
       </View>
+      </View>
+
+      {/* Action Button 행 */}
+      <View style={{ height: 12 }} />
+      {selectedTab === 0 && selectedAccounts.length > 0 && (
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            marginBottom: 12,
+          }}
+        >
+          <View style={{ flexDirection: 'row' }}>
+            <ActionButton
+              text="선택 해제"
+              variant="danger"
+              onPress={() => setSelectedAccounts([])}
+            />
+          </View>
+          <View style={{ flexDirection: 'row', gap: 8 }}>
+            <ActionButton
+              text="계정 정지"
+              variant="primary"
+              onPress={() => setShowSuspendPopup(true)}
+            />
+            <ActionButton
+              text="권한 위임"
+              variant="secondary"
+              onPress={() => setShowAuthorityPopup(true)}
+            />
+          </View>
+        </View>
+      )}
+
 
       {/* 내부 컨텐츠 */}
       <ScrollView style={{ flex: 1 }}>
-        <View style={{ paddingVertical: 16 }}>
+        <View>
           {selectedTab === 0 && (
             // 전체 계정 탭
             <>
-              {/* TODO: 전체 계정 리스트 */}
+              {mockAccounts.map((account) => (
+                <AccountCard
+                  key={account.id}
+                  id={account.id}
+                  name={account.name}
+                  email={account.email}
+                  tags={account.tags}
+                  isSelected={selectedAccounts.includes(account.id)}
+                  onSelect={handleAccountSelect}
+                />
+              ))}
             </>
           )}
           
@@ -174,6 +273,33 @@ export default function AccountManagementScreen() {
         onReasonChange={setRejectReason}
         onConfirm={handleRejectConfirm}
         onCancel={handleCancelModal}
+      />
+
+      <Popup
+          visible={showSuspendPopup}
+          mainText="계정을 정지하시겠습니까?"
+          subText={`"계정 정지에 동의합니다"를 작성해주세요.`}
+          confirmText="확인"
+          cancelText="취소"
+          onConfirm={() => {
+            console.log('정지 확정');
+            setShowSuspendPopup(false);
+          }}
+          onCancel={() => setShowSuspendPopup(false)}
+      />
+      
+      <Popup
+          visible={showAuthorityPopup}
+          mainText="권한을 위임하시겠습니까?"
+          subText={`권한 위임 시,현재 계정의 관리자 권한은 사라집니다.`}
+          confirmText="확인"
+          cancelText="취소"
+          onConfirm={() => {
+            console.log('정지 확정');
+            setShowAuthorityPopup(false);
+          }}
+
+          onCancel={() => setShowAuthorityPopup(false)}
       />
     </View>
   );

@@ -11,7 +11,7 @@ export { default as Title } from './title/Title';
 export { default as Tag } from './tag/Tag';
 export { default as Checkbox } from './checkbox/Checkbox';
 export { default as SearchBar } from './SearchBar/SearchBar';
-export { default as SignupApprovalCard } from './SignupApprovalCard/SignupApprovalCard';
+export { default as SignupApprovalCard } from '../../../../screens/accountmanagementscreen/SignupApprovalCard/SignupApprovalCard';
 export { ApproveModal, RejectModal } from './ConfirmModal/ConfirmModal';
 export { FilterChip, FilterChipGroup } from './FilterChip/FilterChip';
 export { default as ProgressBar } from './progressbar/ProgressBar';

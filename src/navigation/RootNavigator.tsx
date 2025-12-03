@@ -21,12 +21,14 @@ import {
   // TabParamList,
   AuthStackParamList,
   HomeStackParamList,
+  AdminTabParamList
 } from './navigation.types';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 // const Tab = createBottomTabNavigator<TabParamList>();
+const AdminTab = createBottomTabNavigator<AdminTabParamList>();
 
 export default function RootNavigator() {
   return (
@@ -39,6 +41,7 @@ export default function RootNavigator() {
         <RootStack.Screen name="Auth" component={AuthNavigator} />
         <RootStack.Screen name="AccountManagement" component={AccountManagementScreen} />
         {/* <RootStack.Screen name="Tabs" component={TabNavigator} /> */}
+        <RootStack.Screen name="AdminTabs" component={AdminTabNavigator} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
@@ -64,6 +67,17 @@ function AuthNavigator() {
       />
     </AuthStack.Navigator>
   );
+}
+
+function AdminTabNavigator() {
+    return (
+      <AdminTab.Navigator>
+          <AdminTab.Screen 
+            name="AccountManagement" 
+            component={AccountManagementScreen} 
+          />
+        </AdminTab.Navigator>
+    );
 }
 
 // function TabNavigator() {
